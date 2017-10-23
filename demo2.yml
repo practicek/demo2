@@ -1,0 +1,12 @@
+---
+- name: Docker
+  hosts: devservers
+  connection: docker
+  tasks:
+    - name: Deploy Container
+      docker_container:
+        name: centos
+        image: centos 
+        pull: true
+        restart_policy: always
+        state: started
