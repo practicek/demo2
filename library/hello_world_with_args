@@ -1,0 +1,15 @@
+#!/bin/bash
+
+MSG='"Hello World!!"'
+ARGS=`cat $1`
+
+if [ "$ARGS" != '' ]; then
+	for param in $ARGS; do
+		key=`echo $param | cut -d '=' -f 1`
+		value=`echo $param | cut -d '=' -f 2`
+
+		if [ $key == 'msg' ]; then MSG=$value; fi
+	done
+fi
+
+echo "{\"msg\": $MSG, \"rc\": 0, \"changed\": false}"

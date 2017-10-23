@@ -1,0 +1,22 @@
+---
+- name: applicationAのセットアップ
+  hosts: ubuntu01
+  roles:
+    - ruby
+    - mysql
+  tasks:
+    - git:
+        repo: https://github.com/kota-row/ansible-practice-sample-application.git
+        dest: /opt/applicationA
+  become: true
+
+- name: applicationBのセットアップ
+  hosts: ubuntu02
+  roles:
+    - ruby
+    - mysql
+  tasks:
+    - git:
+        repo: https://github.com/kota-row/ansible-practice-sample-application.git
+        dest: /opt/applicationB
+  become: true

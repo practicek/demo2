@@ -1,0 +1,5 @@
+[devservers]
+140.86.15.169
+[dbservers]
+ubuntu02 ansible_host=192.168.33.20
+

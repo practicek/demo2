@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo '{"msg": "HelloWorld", "rc": 0, "changed": "false"}'

@@ -1,0 +1,8 @@
+---
+- name: mysqlをインストール
+  apt: name=mysql-server state=installed
+  become: true
+
+- name: mysqlを再起動し、サービスの自動起動を有効化
+  service: name=mysql state=restarted enabled=yes
+  become: true
