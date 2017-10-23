@@ -18,6 +18,3 @@
       systemd:
         name: docker.service
         state: restarted
-    - name: pull an image
-      docker_image:
-        name: pacur/centos-7
