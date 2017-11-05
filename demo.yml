@@ -20,4 +20,4 @@
         state: restarted
     - name: pull an image
       docker_image:
-        name: nginx
+        name: ruby
