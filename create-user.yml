@@ -1,0 +1,19 @@
+
+- hosts: test_servers
+  become: yes
+  tasks:
+  - name: Create user
+    user:
+      name: oracle
+      password: oracle
+  - name: mkdir .ssh
+    file: dest=/home/oracle/.ssh state=directory owner=oracle group=oracle mode=700
+  
+  - name: add authorized keys
+    copy: src=/home/opc/.ssh/authorized_keys dest=/home/oracle/.ssh
+
+  - name: mkdir oraInventory
+    file: dest=/home/oracle/oraInventory state=directory owner=oracle group=oracle mode=600
+
+  - name: mkdir ORACLE_HOME
+    file: dest=/home/oracle/Oracle/Middleware/Oracle_Home state=directory owner=oracle group=oracle mode=600
