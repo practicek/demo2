@@ -1,0 +1,5 @@
+- hosts: test_servers
+  become: yes
+  tasks:
+    - name: Run script
+      script: /home/opc/demo2/wget.sh
